@@ -1,13 +1,15 @@
 function afficherResultat(score, nombreMotsProposes) {
-  console.log("Votre score est de : " + score + " sur " + nombreMotsProposes);
+  console.log("Votre score est de : " + score +  " sur " + nombreMotsProposes);
 }
 
 function choisirPhrasesOuMots() {
   let choix = prompt(
-    "Voulez-vous jouer avec les mots (entrez 'mots') ou pour les phrases (entrez 'phrases') !"
+    "Voulez-vous jouer avec les mots (écrivez mots) ou pour les phrases (écrivez phrases) !"
   );
-  while (choix != 'mots' && choix != 'phrases') {
-    prompt("Vous devez choisir entre 'mots' et 'phrases'");
+  while (choix != "mots" && choix != "phrases") {
+    prompt(
+      "Voulez-vous jouer avec les mots (écrivez mots) ou pour les phrases (écrivez phrases) !"
+    );
   }
   return choix;
 }
@@ -27,15 +29,13 @@ function lancerJeu() {
   let choix = choisirPhrasesOuMots();
   let score = 0;
   let nombreMotsProposes = 0;
-  if (choix === 'mots') {
+  if (choix === "mots") {
     score = lancerBoucleDeJeu(listeMots);
     nombreMotsProposes = listeMots.length;
-  } else {
+  } else if (choix === "phrases") {
     score = lancerBoucleDeJeu(listePhrases);
     nombreMotsProposes = listePhrases.length;
   }
 
   afficherResultat(score, nombreMotsProposes);
 }
-
-lancerJeu();
