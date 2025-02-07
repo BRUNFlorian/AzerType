@@ -1,18 +1,21 @@
 function afficherResultat(score, nombreMotsProposes) {
-  console.log("Votre score est de : " + score +  " sur " + nombreMotsProposes);
+  let spanScore = document.querySelector(".zoneScore span");
+  let affichageScore = `${score} / ${nombreMotsProposes}`;
+  spanScore.innerText = affichageScore;
+  console.log("Votre score est de : " + score + " sur " + nombreMotsProposes);
 }
 
-function choisirPhrasesOuMots() {
-  let choix = prompt(
-    "Voulez-vous jouer avec les mots (écrivez mots) ou pour les phrases (écrivez phrases) !"
-  );
-  while (choix != "mots" && choix != "phrases") {
-    prompt(
-      "Voulez-vous jouer avec les mots (écrivez mots) ou pour les phrases (écrivez phrases) !"
-    );
-  }
-  return choix;
-}
+// function choisirPhrasesOuMots() {
+//   let choix = prompt(
+//     "Voulez-vous jouer avec les mots (écrivez mots) ou pour les phrases (écrivez phrases) !"
+//   );
+//   while (choix != "mots" && choix != "phrases") {
+//     prompt(
+//       "Voulez-vous jouer avec les mots (écrivez mots) ou pour les phrases (écrivez phrases) !"
+//     );
+//   }
+//   return choix;
+// }
 
 function lancerBoucleDeJeu(listePropositions) {
   let score = 0;
